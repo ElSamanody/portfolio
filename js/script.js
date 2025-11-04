@@ -173,3 +173,42 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// ---------- Close mobile navbar when clicking outside or when clicking a nav link ----------
+(function () {
+  const collapseEl = document.getElementById("navbarSupportedContent");
+  const toggler = document.querySelector(".navbar-toggler");
+
+  if (!collapseEl) return;
+
+  // Close when clicking a nav-link inside the collapse (useful for single-page anchors)
+  collapseEl.querySelectorAll(".nav-link").forEach((link) => {
+    link.addEventListener("click", () => {
+      const instance = bootstrap.Collapse.getInstance(collapseEl);
+      if (instance && collapseEl.classList.contains("show")) instance.hide();
+    });
+  });
+
+  // Close when clicking outside the navbar collapse
+  document.addEventListener(
+    "click",
+    (e) => {
+      const isShown = collapseEl.classList.contains("show");
+      if (!isShown) return;
+
+      // If click inside the collapse or on the toggler, do nothing
+      if (
+        collapseEl.contains(e.target) ||
+        (toggler && toggler.contains(e.target))
+      )
+        return;
+
+      // Otherwise hide collapse
+      let instance = bootstrap.Collapse.getInstance(collapseEl);
+      if (!instance)
+        instance = new bootstrap.Collapse(collapseEl, { toggle: false });
+      instance.hide();
+    },
+    { capture: true }
+  );
+})();
