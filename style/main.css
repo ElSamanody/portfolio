@@ -13,11 +13,24 @@
         --background-color-section-secondary: #FBFBFB;
         --background-color-body: #fff;
         --butotn-color: #7F74F1;
+        --vh: 100%;
+
     }
+
+    :root {}
+
+
 
     body {
         font-family: "Inter", sans-serif;
         background-color: var(--background-color-body);
+    }
+
+    /* Prevent horizontal overflow (common cause of mobile zoom/scale issues) */
+    html,
+    body {
+        width: 100%;
+        overflow-x: hidden;
     }
 
     /* spinner */
@@ -224,6 +237,84 @@
         left: 0px;
     }
 
+    /*  */
+    #navbar-toggler {
+        border: none;
+        background-color: transparent;
+    }
+
+    #hamburger10-input {
+        display: none;
+    }
+
+    .hamburger10 {
+        display: flex;
+        width: 24px;
+    }
+
+    .hamburger10 div {
+        position: relative;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+    }
+
+    .hamburger10 .line {
+        position: absolute;
+        display: block;
+        width: 24px;
+        height: 1.5px;
+        border-radius: 5px;
+        background-color: black;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .hamburger10 .line1 {
+        top: 0;
+        transform-origin: left;
+    }
+
+    .hamburger10 .line2,
+    .hamburger10 .line3 {
+        top: 50%;
+        transform-origin: center;
+    }
+
+    .hamburger10 .line4 {
+        bottom: 0;
+        transform-origin: right;
+    }
+
+    .hamburger10-container .line1,
+    .hamburger10-container .line4 {
+        transform-origin: 5%;
+    }
+
+    .hamburger10 input:checked+label>.hamburger10-container>.line1 {
+        width: 35px;
+        height: 3px;
+        transform: rotate(45deg);
+    }
+
+    .hamburger10 input:checked+label>.hamburger10-container>.line3 {
+        height: 3px;
+        transform: rotate(45deg);
+        background-color: transparent;
+    }
+
+    .hamburger10 input:checked+label>.hamburger10-container>.line2 {
+        height: 3px;
+        transform: rotate(-45deg);
+        background-color: transparent;
+    }
+
+    .hamburger10 input:checked+label>.hamburger10-container>.line4 {
+        width: 35px;
+        height: 3px;
+        transform: rotate(-45deg);
+    }
+
+    /*  */
     .hero-section .info #hero-title>#hero-title-text {
         color: var(--primary-color) !important;
     }
@@ -265,7 +356,7 @@
     section.services,
     section.career {
         background-color: var(--background-color-section-secondary);
-        padding: 80px 0 100px;
+        padding: 80px 0px;
     }
 
     .services span::before,
@@ -328,7 +419,7 @@
     .works,
     section.form,
     section.Skills {
-        padding: 80px 0 100px;
+        padding: 80px 0;
     }
 
     .works .card .image {
@@ -630,7 +721,7 @@
         section.Skills,
         section.services,
         section.career {
-            padding: 40px 0 40px;
+            padding: 30px 0 30px;
         }
 
         .hero-section {
@@ -653,4 +744,29 @@
     /* Make sure modal itself is above the backdrop */
     .modal {
         z-index: 2001 !important;
+    }
+
+    /* Remove global full-viewport forcing — let sections size naturally */
+    .hero-section,
+    .services,
+    .works,
+    .career,
+    .Skills,
+    section.form {
+        height: auto !important;
+        min-height: 0 !important;
+    }
+
+    /* Ensure services cards and their images scale naturally on small screens */
+    .services .card {
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 1rem;
+    }
+
+    .services .card img,
+    .services .card .card-icon img {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: cover;
     }
