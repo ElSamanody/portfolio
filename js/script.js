@@ -1,4 +1,3 @@
-const loader = document.getElementById("loader");
 window.addEventListener("load", function () {
   const loader = document.getElementById("loader");
   loader.style.display = "none"; // اخفاء الـ spinner
@@ -7,7 +6,7 @@ const titleEl = document.getElementById("hero-title-text");
 const textEl = document.getElementById("hero-text");
 
 const texts = [
-  { title: "Elsayed", text: "elsamanody" },
+  { title: "Elsayed", text: "Elsamanody" },
   { title: "Front-End", text: "Developer" },
 ];
 
@@ -151,6 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     });
 
+    // numper
     // numper
     if (percentLabel) {
       const obj = { value: 0 };
