@@ -68,7 +68,7 @@ const filenameInput = document.getElementById("filenameInput");
 function downloadFile() {
   const filename = filenameInput.value.trim() || "My_Resume";
   const link = document.createElement("a");
-  link.href = "./cv.pdf"; // check the file in the path
+  link.href = "./cv/Elsayed_Elsamanody_cv.pdf"; // check the file in the path
   link.download = filename + ".pdf";
   link.style.display = "none";
   document.body.appendChild(link);
@@ -101,11 +101,14 @@ form.addEventListener("submit", async (e) => {
   };
 
   try {
-    const res = await fetch("http://localhost:3000/send", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
+    const res = await fetch(
+      "https://portfolio-production-6d2e.up.railway.app/send",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      }
+    );
 
     const result = await res.json();
     console.log(result);
