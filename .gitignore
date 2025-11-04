@@ -1,0 +1,17 @@
+# Node modules
+node_modules/
+back-end/node_modules/
+front-end/node_modules/
+
+# Log files
+*.log
+
+# Env files
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+.vscode/
+.idea/
