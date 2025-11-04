@@ -2,6 +2,21 @@ window.addEventListener("load", function () {
   const loader = document.getElementById("loader");
   loader.style.display = "none"; // اخفاء الـ spinner
 });
+
+// navbar hamburger synchronization with bootstrap collapse
+const navbarToggler = document.getElementById("navbar-toggler");
+const hamburgerInput = document.getElementById("hamburger10-input");
+const navbarCollapse = document.getElementById("navbarSupportedContent");
+
+// استمع لتغيير حالة الكولابس
+navbarCollapse.addEventListener("shown.bs.collapse", () => {
+  hamburgerInput.checked = true;
+});
+
+navbarCollapse.addEventListener("hidden.bs.collapse", () => {
+  hamburgerInput.checked = false;
+});
+
 const titleEl = document.getElementById("hero-title-text");
 const textEl = document.getElementById("hero-text");
 
