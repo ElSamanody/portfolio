@@ -20,8 +20,7 @@
         background-color: var(--background-color-body);
     }
 
-    /* spinner */ 
-
+    /* spinner */
     #loader {
         position: fixed;
         top: 0;
@@ -33,7 +32,8 @@
         justify-content: center;
         align-items: center;
         z-index: 9999;
-    } 
+    }
+
     .three-body {
         --uib-size: 35px;
         --uib-speed: 0.8s;
@@ -44,13 +44,13 @@
         width: var(--uib-size);
         animation: spin78236 calc(var(--uib-speed) * 2.5) infinite linear;
     }
-    
+
     .three-body__dot {
         position: absolute;
         height: 100%;
         width: 30%;
     }
-    
+
     .three-body__dot:after {
         content: '';
         position: absolute;
@@ -60,83 +60,83 @@
         background-color: var(--uib-color);
         border-radius: 50%;
     }
-    
+
     .three-body__dot:nth-child(1) {
         bottom: 5%;
         left: 0;
         transform: rotate(60deg);
         transform-origin: 50% 85%;
     }
-    
+
     .three-body__dot:nth-child(1)::after {
         bottom: 0;
         left: 0;
         animation: wobble1 var(--uib-speed) infinite ease-in-out;
         animation-delay: calc(var(--uib-speed) * -0.3);
     }
-    
+
     .three-body__dot:nth-child(2) {
         bottom: 5%;
         right: 0;
         transform: rotate(-60deg);
         transform-origin: 50% 85%;
     }
-    
+
     .three-body__dot:nth-child(2)::after {
         bottom: 0;
         left: 0;
-        animation: wobble1 var(--uib-speed) infinite
-        calc(var(--uib-speed) * -0.15) ease-in-out;
+        animation: wobble1 var(--uib-speed) infinite calc(var(--uib-speed) * -0.15) ease-in-out;
     }
-    
+
     .three-body__dot:nth-child(3) {
         bottom: -5%;
         left: 0;
         transform: translateX(116.666%);
     }
-    
+
     .three-body__dot:nth-child(3)::after {
         top: 0;
         left: 0;
         animation: wobble2 var(--uib-speed) infinite ease-in-out;
     }
-    
+
     @keyframes spin78236 {
         0% {
-        transform: rotate(0deg);
+            transform: rotate(0deg);
         }
-    
+
         100% {
-        transform: rotate(360deg);
+            transform: rotate(360deg);
         }
     }
-    
+
     @keyframes wobble1 {
+
         0%,
         100% {
-        transform: translateY(0%) scale(1);
-        opacity: 1;
+            transform: translateY(0%) scale(1);
+            opacity: 1;
         }
-    
+
         50% {
-        transform: translateY(-66%) scale(0.65);
-        opacity: 0.8;
+            transform: translateY(-66%) scale(0.65);
+            opacity: 0.8;
         }
     }
-    
+
     @keyframes wobble2 {
+
         0%,
         100% {
-        transform: translateY(0%) scale(1);
-        opacity: 1;
+            transform: translateY(0%) scale(1);
+            opacity: 1;
         }
-    
+
         50% {
-        transform: translateY(66%) scale(0.65);
-        opacity: 0.8;
+            transform: translateY(66%) scale(0.65);
+            opacity: 0.8;
         }
     }
-        
 
     a {
         text-decoration: none;
@@ -151,27 +151,26 @@
 
     #navbar {
         position: fixed;
-        top: 20px; /* أو أي مسافة من أعلى الصفحة */
+        top: 20px;
         left: 50%;
-        transform: translateX(-50%); /* تمركز أفقي */
-        width: 80%; /* 80% من عرض الشاشة */
+        transform: translateX(-50%);
+        width: 80%;
         padding: 1rem 2rem;
-        background: rgba(127, 116, 241, 0.15); /* نفس اللون #7F74F1 شفاف */
+        background: rgba(127, 116, 241, 0.15);
         backdrop-filter: blur(15px) saturate(180%);
         -webkit-backdrop-filter: blur(15px) saturate(180%);
         border-radius: 20px;
         box-shadow: 0 8px 10px rgba(0, 0, 0, 0.05);
         border: 1px solid rgba(255, 255, 255, 0.3);
         z-index: 1000;
-    
+
     }
 
     .navbar .nav-link-custom {
         color: var(--nav-link-color) !important;
         position: relative;
+        width: fit-content;
     }
-
-
 
     .navbar .nav-link-custom::after {
         content: "";
@@ -190,7 +189,6 @@
 
     .navbar .nav-link-custom:hover::after {
         width: 100%;
-
     }
 
     .hero-section .info>span,
@@ -226,14 +224,16 @@
         color: var(--primary-color) !important;
     }
 
-    .hero-section .info #hero-title>#hero-text{
+    .hero-section .info #hero-title>#hero-text {
         color: #7F74F1 !important;
     }
+
     .char {
         display: inline-block;
         opacity: 0;
         transition: opacity 0.3s ease;
     }
+
     .char.show {
         opacity: 1;
     }
@@ -246,7 +246,6 @@
     .hero-section .image {
         width: 50%;
         z-index: 1;
-
     }
 
     .hero-section .image img {
@@ -258,20 +257,12 @@
         border-radius: 15px;
     }
 
-
-
-
-
     /* services */
-
     section.services,
     section.career {
         background-color: var(--background-color-section-secondary);
         padding: 80px 0 100px;
-
     }
-
-
 
     .services span::before,
     .works .container>span::before,
@@ -314,10 +305,7 @@
     .services .card:hover {
         transform: scale(1.05) !important;
         box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-
     }
-
-
 
     .services .card .card-icon .image {
         background-color: #F5F3FE !important;
@@ -333,15 +321,13 @@
     }
 
     /* works */
-
     .works,
     section.form,
     section.Skills {
         padding: 80px 0 100px;
-
     }
 
-    .works .card .image{
+    .works .card .image {
         height: 200px;
     }
 
@@ -364,7 +350,6 @@
     }
 
     /* career */
-
     .career .nav li>button {
         color: var(--primary-color);
     }
@@ -393,7 +378,7 @@
         padding-left: 20PX;
     }
 
-    .career .tab-content ul>li::after {
+    .career ul.point>li::after {
         content: "";
         position: absolute;
         bottom: 50%;
@@ -401,12 +386,9 @@
         width: 10px;
         height: 1px;
         background-color: #D9D9D9;
-
     }
 
     /* skills */
-
-    /*  */
     .Skills .timeline .timeline-content>h5 {
         color: var(--primary-color);
     }
@@ -414,7 +396,6 @@
     .Skills .timeline .timeline-content>p {
         color: var(--secondary-color);
         font-size: 12px;
-
     }
 
     .Skills .timeline .timeline-content>span {
@@ -445,22 +426,17 @@
 
     .Skills .progress {
         background-color: #e9ecef;
-        /* لون الخلفية */
         border-radius: 6px;
         overflow: hidden;
         height: 20px;
     }
 
-    /* إجبار الـ progress bars على البدء من صفر */
+    /* progress bar */
     .Skills .progress-bar-custom {
         background-color: #7E74F1;
-        /* اللون اللي يبان */
         width: 0%;
-        /* يبدأ من صفر */
         height: 100%;
         transition: none;
-        /* خليه للـ GSAP فقط */
-
     }
 
     .percent-label {
@@ -504,8 +480,6 @@
     form .btn-primary-custom:hover,
     form .btn-primary-custom:focus {
         background-color: #7E74F1 !important;
-
-
     }
 
     section.form .map .icon,
@@ -528,13 +502,8 @@
         color: var(--secondary-color);
     }
 
-
-
-
-
-
     /* media */
-    /* شاشات أصغر من 992px (Laptop) */
+    /* (Laptop) */
     @media (max-width: 992px) {
 
         nav .navbar-brand h3 {
@@ -572,12 +541,8 @@
         }
     }
 
-    /* تنسيقات اللابتوب */
-
-    /* شاشات أصغر من 768px (Tablet) */
+    /* (Tablet) */
     @media (max-width: 767px) {
-        /* تنسيقات التابلت */
-
         .navbar .navbar-collapse {
             position: absolute;
             top: 100%;
@@ -587,30 +552,33 @@
             z-index: 1000;
             padding: 1rem;
         }
+
         .works,
         section.form,
-        section.Skills, 
-        section.services, 
-        section.career{
-            padding:60px 0 60px;
+        section.Skills,
+        section.services,
+        section.career {
+            padding: 60px 0 60px;
         }
 
-        .hero-section .image-container { 
+        .hero-section .image-container {
             margin-top: 10px !important;
+        }
+
+
     }
 
-   
-    }
-
-    /* شاشات أصغر من 576px (Mobile صغير) */
+    /* Mobile small */
     @media (max-width: 576px) {
+
         .works,
         section.form,
-        section.Skills, 
-        section.services, 
-        section.career{
+        section.Skills,
+        section.services,
+        section.career {
             padding: 40px 0 40px;
         }
+
         .hero-section {
             padding-top: 100px !important;
         }
