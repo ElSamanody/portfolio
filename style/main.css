@@ -191,6 +191,10 @@
         width: 100%;
     }
 
+    .btn-cv-custom:active {
+        background-color: none;
+    }
+
     .hero-section .info>span,
     .services span,
     .works .container>span,
@@ -543,14 +547,63 @@
 
     /* (Tablet) */
     @media (max-width: 767px) {
+
+        /* Mobile dropdown styling: centered panel with subtle radius and shadow */
         .navbar .navbar-collapse {
             position: absolute;
             top: 100%;
-            left: 0;
-            width: 100%;
-            background: #fff;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 2rem);
+            background: #ffffff;
             z-index: 1000;
             padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(35, 46, 53, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        /* Mobile nav links: stack, larger tap targets, consistent spacing */
+        .navbar .navbar-collapse .navbar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            align-items: stretch;
+        }
+
+        .navbar .navbar-collapse .nav-link-custom {
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            background: transparent;
+            transition: background-color 0.12s ease;
+        }
+
+        .navbar .navbar-collapse .nav-link-custom:hover,
+        .navbar .navbar-collapse .nav-link-custom:focus {
+            background: rgba(127, 116, 241, 0.06);
+        }
+
+        /* Make Resume button full width inside collapse */
+        .navbar .navbar-collapse .btn {
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+
+        /* Remove accidental transforms/animations on toggler for a cleaner look */
+        .navbar-toggler {
+            transition: none !important;
+            transform: none !important;
+            box-shadow: none !important;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            background: #fff;
+        }
+
+        .navbar-toggler:hover,
+        .navbar-toggler:focus,
+        .navbar-toggler:active {
+            transform: none !important;
+            box-shadow: none !important;
+            outline: none !important;
         }
 
         .works,
@@ -571,6 +624,7 @@
     /* Mobile small */
     @media (max-width: 576px) {
 
+
         .works,
         section.form,
         section.Skills,
@@ -582,4 +636,21 @@
         .hero-section {
             padding-top: 100px !important;
         }
+    }
+
+    /* Ensure modal backdrop covers full viewport and apply blur on supported browsers */
+    .modal-backdrop {
+        position: fixed !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        backdrop-filter: blur(1px) !important;
+        -webkit-backdrop-filter: blur(6px) !important;
+        background-color: rgba(0, 0, 0, 0.45) !important;
+        z-index: 2000 !important;
+    }
+
+    /* Make sure modal itself is above the backdrop */
+    .modal {
+        z-index: 2001 !important;
     }
