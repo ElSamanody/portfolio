@@ -13,13 +13,7 @@
         --background-color-section-secondary: #FBFBFB;
         --background-color-body: #fff;
         --butotn-color: #7F74F1;
-        --vh: 100%;
-
     }
-
-    :root {}
-
-
 
     body {
         font-family: "Inter", sans-serif;
@@ -176,7 +170,6 @@
         box-shadow: 0 8px 10px rgba(0, 0, 0, 0.05);
         border: 1px solid rgba(255, 255, 255, 0.3);
         z-index: 1000;
-
     }
 
     .navbar .nav-link-custom {
