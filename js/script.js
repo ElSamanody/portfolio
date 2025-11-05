@@ -83,7 +83,16 @@ const filenameInput = document.getElementById("filenameInput");
 function downloadFile() {
   const filename = filenameInput.value.trim() || "My_Resume";
   const link = document.createElement("a");
-  link.href = "./cv/Elsayed_Elsamanody_cv.pdf"; // check the file in the path
+  // Resolve the CV URL relative to the current page so it works on GitHub Pages and locally
+  try {
+    link.href = new URL(
+      "cv/Elsayed_Elsamanody_cv.pdf",
+      window.location.href
+    ).href;
+  } catch (err) {
+    // Fallback to a relative path
+    link.href = "cv/Elsayed_Elsamanody_cv.pdf";
+  }
   link.download = filename + ".pdf";
   link.style.display = "none";
   document.body.appendChild(link);
