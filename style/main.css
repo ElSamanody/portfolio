@@ -345,6 +345,50 @@
         border-radius: 15px;
     }
 
+    .hero-section .social a {
+        font-size: 20px;
+        background-color: #eceafd;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all .3s ease;
+    }
+
+    .hero-section .social a.linkedin {
+        color: #0A66C2 !important;
+    }
+
+    .hero-section .social a.linkedin:hover {
+        background-color: #0A66C2;
+        color: #fff !important;
+        box-shadow: 0 4px 10px #0A66C2;
+
+    }
+
+    .hero-section .social a.github {
+        color: #333 !important;
+    }
+
+    .hero-section .social a.github:hover {
+        background-color: #333;
+        color: #fff !important;
+        box-shadow: 0 4px 10px #333;
+    }
+
+    .hero-section .social a.fa-whatsapp {
+        color: #25D366 !important;
+
+    }
+
+    .hero-section .social a.fa-whatsapp:hover {
+        background-color: #25D366;
+        color: #fff !important;
+        box-shadow: 0 4px 10px #25D366;
+    }
+
     /* services */
     section.services,
     section.career {
@@ -708,6 +752,43 @@
     /* Mobile small */
     @media (max-width: 576px) {
 
+        .navbar-brand h3 {
+            font-size: 14px !important;
+        }
+
+        .hero-section #hero-title {
+            font-size: 22px !important;
+        }
+
+        .hero-section p {
+            font-size: 14px !important;
+        }
+
+        .hero-section .social a {
+            font-size: 15px;
+            width: 35px;
+            height: 35px;
+        }
+
+        .services h3,
+        .works .container>h3,
+        .career .container>h3,
+        .Skills .container>h3 {
+            font-size: 22px !important;
+        }
+
+        .services span,
+        .works .container>span,
+        .career .container>span {
+            font-size: 10px !important;
+        }
+
+        .services h3,
+        .works .container>h3,
+        .career .container>h3,
+        .Skills .container>h3 {
+            font-size: 20px !important;
+        }
 
         .works,
         section.form,
@@ -718,7 +799,7 @@
         }
 
         .hero-section {
-            padding-top: 100px !important;
+            padding-top: 90px !important;
         }
     }
 
