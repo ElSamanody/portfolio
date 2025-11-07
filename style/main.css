@@ -201,36 +201,6 @@
         background-color: none;
     }
 
-    .hero-section .info>span,
-    .services span,
-    .works .container>span,
-    .career .container>span,
-    .Skills .container>span {
-        font-size: .75rem;
-        color: var(--secondary-color);
-        word-spacing: 7.5px !important;
-        position: relative !important;
-    }
-
-    .hero-section .info>span,
-    .services span,
-    .works .container>span,
-    .career .container>span,
-    .Skills .container>span {
-        letter-spacing: 6.5px !important;
-    }
-
-    .hero-section .info>span::before {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 1px;
-        background-color: #D9D9D9;
-        top: 50%;
-        left: 0px;
-    }
-
-    /*  */
     #navbar-toggler {
         border: none;
         background-color: transparent;
@@ -307,7 +277,35 @@
         transform: rotate(-45deg);
     }
 
-    /*  */
+    .hero-section .info>span,
+    .services span,
+    .works .container>span,
+    .career .container>span,
+    .Skills .container>span {
+        font-size: .75rem;
+        color: var(--secondary-color);
+        word-spacing: 7.5px !important;
+        position: relative !important;
+    }
+
+    .hero-section .info>span,
+    .services span,
+    .works .container>span,
+    .career .container>span,
+    .Skills .container>span {
+        letter-spacing: 6.5px !important;
+    }
+
+    .hero-section .info>span::before {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 1px;
+        background-color: #D9D9D9;
+        top: 50%;
+        left: 0px;
+    }
+
     .hero-section .info #hero-title>#hero-title-text {
         color: var(--primary-color) !important;
     }
@@ -343,6 +341,15 @@
         display: block;
         object-fit: cover;
         border-radius: 15px;
+        transition: all .5s ease;
+    }
+
+    .hero-section .image img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 40px rgba(75, 10, 18, 0.4),
+            0 5px 15px rgba(255, 255, 255, 0.05) inset;
+        transform: scale(1.05) translateY(-5px);
+
     }
 
     .hero-section .social a {
@@ -354,7 +361,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: all .3s ease;
+        transition: all .5s ease;
     }
 
     .hero-section .social a.linkedin {
@@ -365,6 +372,7 @@
         background-color: #0A66C2;
         color: #fff !important;
         box-shadow: 0 4px 10px #0A66C2;
+        transform: translateY(-5px);
 
     }
 
@@ -376,6 +384,8 @@
         background-color: #333;
         color: #fff !important;
         box-shadow: 0 4px 10px #333;
+        transform: translateY(-5px);
+
     }
 
     .hero-section .social a.fa-whatsapp {
@@ -387,6 +397,8 @@
         background-color: #25D366;
         color: #fff !important;
         box-shadow: 0 4px 10px #25D366;
+        transform: translateY(-5px);
+
     }
 
     /* services */
