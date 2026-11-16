@@ -206,6 +206,12 @@
         background-color: transparent;
     }
 
+    #navbar-toggler:hover,
+    #navbar-toggler:focus,
+    #navbar-toggler:active {
+        border: none !important;
+    }
+
     #hamburger10-input {
         display: none;
     }
@@ -390,7 +396,6 @@
 
     .hero-section .social a.fa-whatsapp {
         color: #25D366 !important;
-
     }
 
     .hero-section .social a.fa-whatsapp:hover {
@@ -443,7 +448,7 @@
 
     .services .card {
         border-radius: 12px;
-        transition: all .3ms linear;
+        transition: all .3s linear;
     }
 
     .services .card:hover {
